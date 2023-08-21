@@ -56,7 +56,7 @@ class BeritaController extends CI_Controller {
 		public function edit($id)
 		{
         $data['berita'] = $this->Berita_model->getDetailBerita($id);
-				$data['kategori'] = $this->Kategori_model->getKategori();
+		$data['kategori'] = $this->Kategori_model->getKategori();
         $this->load->view('layouts/header');
         $this->load->view('berita/edit',$data);
         $this->load->view('layouts/footer'); 
