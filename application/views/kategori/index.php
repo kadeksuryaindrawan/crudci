@@ -22,15 +22,14 @@
 			  
                 <div class="card">
                   <div class="card-body">
-					<div class="row mb-5">
-						<div class="col-lg-10">
-							<h4 class="card-title">Daftar Kategori</h4>
-						</div>
-						<div class="col-lg-2">
-							<a href="<?= base_url('KategoriController/tambah') ?>"><button class="btn btn-primary">Tambah Kategori</button></a>
-						</div>
-					</div>
-                    
+										<div class="row mb-5">
+											<div class="col-lg-10">
+												<h4 class="card-title">Daftar Kategori</h4>
+											</div>
+											<div class="col-lg-2">
+												<a href="<?= base_url('KategoriController/tambah') ?>"><button class="btn btn-primary">Tambah Kategori</button></a>
+											</div>
+										</div>
 					
                     <div class="table-responsive">
                       <table class="table table-hover">
@@ -42,18 +41,18 @@
                           </tr>
                         </thead>
                         <tbody>
-							<?php
-								$no=1;
-							foreach($kategori->result_array() as $key): ?>
-								<tr>
-									<td><?= $no++ ?></td>
-									<td><?= $key['nama_kategori'] ?></td>
-									<td>
-										<a href="<?= base_url('KategoriController/edit/'.$key['id_kategori']) ?>"><button class="btn btn-primary">Edit</button></a>
-										<a href="<?= base_url('KategoriController/hapus/'.$key['id_kategori']) ?>" onclick = "return confirm('Yakin hapus kategori?')"><button class="btn btn-danger">Hapus</button></a>
-									</td>
-								</tr>
-							<?php endforeach ?>
+													<?php
+														$no=1;
+													foreach($kategori->result_array() as $key): ?>
+														<tr>
+															<td><?= $no++ ?></td>
+															<td><?= $key['nama_kategori'] ?></td>
+															<td>
+																<a href="<?= base_url('KategoriController/edit/'.$key['id_kategori']) ?>"><button class="btn btn-primary">Edit</button></a>
+																<a href="<?= base_url('KategoriController/hapus/'.$key['id_kategori']) ?>" onclick = "return confirm('Yakin hapus kategori?')"><button class="btn btn-danger">Hapus</button></a>
+															</td>
+														</tr>
+													<?php endforeach ?>
                         </tbody>
                       </table>
                     </div>
