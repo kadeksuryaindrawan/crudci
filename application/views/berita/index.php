@@ -38,8 +38,10 @@
                           <tr>
                             <th>No</th>
                             <th>Kategori</th>
-							<th>Judul Berita</th>
-							<th>Isi</th>
+														<th>Judul Berita</th>
+														<th>Isi</th>
+														<th>Tanggal Upload</th>
+														<th>Tanggal Update</th>
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -52,6 +54,8 @@
 									<td><?= $key['nama_kategori'] ?></td>
 									<td><?= $key['judul_berita'] ?></td>
 									<td><?= $key['isi_berita'] ?></td>
+									<td><?= date('d M Y H:i:s',strtotime($key['tanggal_upload'])) ?></td>
+									<td><?= date('d M Y H:i:s',strtotime($key['tanggal_update'])) ?></td>
 									<td>
 										<a href="<?= base_url('BeritaController/edit/'.$key['id_berita']) ?>"><button class="btn btn-primary">Edit</button></a>
 										<a href="<?= base_url('BeritaController/hapus/'.$key['id_berita']) ?>" onclick = "return confirm('Yakin hapus berita?')"><button class="btn btn-danger">Hapus</button></a>

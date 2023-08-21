@@ -16,31 +16,33 @@
 						</div>
 					<?php endif ?>
                     <form class="forms-sample" action="<?= base_url('BeritaController/add') ?>" method="POST">
-                      <div class="form-group">
-                        <label for="judul_berita">Judul Berita</label>
-                        <input type="text" class="form-control" id="judul_berita" name="judul_berita" placeholder="Masukkan Judul Berita" required />
-                      </div>
+						<div class="form-group">
+							<label for="judul_berita">Judul Berita</label>
+							<input type="text" class="form-control" id="judul_berita" name="judul_berita" placeholder="Masukkan Judul Berita" required />
+						</div>
 
-					  <div class="form-group">
-                        <label for="id_kategori">Nama Kategori</label>
-                        <select name="id_kategori" id="id_kategori" class="form-control">
-							<option value="" disabled selected>- Pilih Kategori -</option>
-							<?php
-								foreach($kategori->result_array() as $kategori){
-									?>
-										<option value="<?= $kategori['id_kategori'] ?>"><?= $kategori['nama_kategori'] ?></option>
-									<?php
-								}
-							?>
-						</select>
-                      </div>
-					  <div class="form-group">
-						<label for="isi_berita">Isi Berita</label>
-						<textarea name="isi_berita" id="isi_berita" cols="30" rows="10" class="form-control"></textarea>
-					</div>
+						<div class="form-group">
+							<label for="id_kategori">Nama Kategori</label>
+							<select name="id_kategori" id="id_kategori" class="form-control">
+								<option value="" disabled selected>- Pilih Kategori -</option>
+								<?php
+									foreach($kategori->result_array() as $kategori){
+										?>
+											<option value="<?= $kategori['id_kategori'] ?>"><?= $kategori['nama_kategori'] ?></option>
+										<?php
+									}
+								?>
+							</select>
+						</div>
+
+					  	<div class="form-group">
+							<label for="isi_berita">Isi Berita</label>
+							<textarea name="isi_berita" id="isi_berita" cols="30" rows="10" class="form-control"></textarea>
+						</div>
+						
                       <button type="submit" class="btn btn-primary me-2"> Simpan </button>
                     </form>
-					<a href="<?= base_url('KategoriController') ?>"><button class="btn btn-secondary mt-2">Kembali</button></a>
+					<a href="<?= base_url('BeritaController') ?>"><button class="btn btn-secondary mt-2">Kembali</button></a>
                   </div>
                 </div>
               </div>

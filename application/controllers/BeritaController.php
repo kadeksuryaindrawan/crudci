@@ -27,6 +27,40 @@ class BeritaController extends CI_Controller {
 			$this->load->view('berita/tambah',$data);
 			$this->load->view('layouts/footer');
     }
+
+		public function add()
+    {
+        $this->form_validation->set_rules('id_kategori', 'Kategori','required|min_length[1]|max_length[255]');
+				$this->form_validation->set_rules('judul_berita', 'Judul Berita','required|min_length[1]|max_length[255]|is_unique[berita.judul_berita]');
+				$this->form_validation->set_rules('isi_berita', 'Isi Berita','required|min_length[1]');
+
+				if ($this->form_validation->run()==true){
+            $this->Berita_model->insertBerita();
+            $this->session->set_flashdata('success','Berhasil menambah berita !');
+            redirect('BeritaController');
+        }
+        else{
+            $this->session->set_flashdata('error', validation_errors());
+						redirect('BeritaController/tambah');
+        }
+        
+    }
+
+		public function hapus($id)
+		{
+			$this->Berita_model->deleteBerita($id);
+			$this->session->set_flashdata('success','Berhasil menghapus berita !');
+			redirect('BeritaController');
+		}
+
+		public function edit($id)
+		{
+        $data['berita'] = $this->Berita_model->getDetailBerita($id);
+				$data['kategori'] = $this->Kategori_model->getKategori();
+        $this->load->view('layouts/header');
+        $this->load->view('berita/edit',$data);
+        $this->load->view('layouts/footer'); 
+		}
 }
 
 /* End of file BeritaController.php and path \application\controllers\BeritaController.php */
