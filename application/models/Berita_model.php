@@ -39,6 +39,20 @@ class Berita_model extends CI_Model
 		$result = $this->db->get('berita')->result_array();
 		return $result[0];
 	}
+
+	public function editBerita()
+	{
+		$edit = array(
+			'id_kategori' => $this->input->post('id_kategori'),
+			'judul_berita' => $this->input->post('judul_berita'),
+			'isi_berita' => $this->input->post('isi_berita'),
+		);
+		$this->db->set('tanggal_update', 'NOW()');
+        $this->db->where('id_berita', $this->input->post('id_berita'));
+		$result = $this->db->update('berita', $edit);
+
+		return $result;
+	}
                         
 }
 
