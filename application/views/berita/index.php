@@ -38,7 +38,7 @@
                             <th>No</th>
                             <th>Kategori</th>
 														<th>Judul Berita</th>
-														<th>Isi</th>
+														<th>Isi Berita</th>
 														<th>Tanggal Upload</th>
 														<th>Tanggal Update</th>
                             <th>Action</th>
