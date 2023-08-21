@@ -6,7 +6,7 @@
             </div>
             <div class="row">
 				<div class="col-lg-12">
-				<?php if($this->session->flashdata('success')): ?>
+				      <?php if($this->session->flashdata('success')): ?>
 									<div class="alert alert-success">
 										<?= $this->session->flashdata('success') ?>
 									</div>

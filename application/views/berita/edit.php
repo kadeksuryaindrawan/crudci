@@ -10,41 +10,41 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title mb-5">Form Edit Berita</h4>
-					<?php if($this->session->flashdata('error')): ?>
-						<div class="alert alert-danger">
-							<?= $this->session->flashdata('error') ?>
-						</div>
-					<?php endif ?>
+										<?php if($this->session->flashdata('error')): ?>
+											<div class="alert alert-danger">
+												<?= $this->session->flashdata('error') ?>
+											</div>
+										<?php endif ?>
                     <form class="forms-sample" action="<?= base_url('BeritaController/editProcess') ?>" method="POST">
-					<input type="hidden" value="<?= $berita['id_berita'] ?>" name="id_berita">
-						<div class="form-group">
-							<label for="judul_berita">Judul Berita</label>
-							<input type="text" class="form-control" id="judul_berita" name="judul_berita" value="<?= $berita['judul_berita'] ?>" placeholder="Masukkan Judul Berita" required />
-						</div>
+											<input type="hidden" value="<?= $berita['id_berita'] ?>" name="id_berita">
+											<div class="form-group">
+												<label for="judul_berita">Judul Berita</label>
+												<input type="text" class="form-control" id="judul_berita" name="judul_berita" value="<?= $berita['judul_berita'] ?>" placeholder="Masukkan Judul Berita" required />
+											</div>
 
-						<div class="form-group">
-							<label for="id_kategori">Nama Kategori</label>
-							<select name="id_kategori" id="id_kategori" class="form-control">
-								<option value="" disabled selected>- Pilih Kategori -</option>
-								<?php
-									foreach($kategori->result_array() as $kategori){
-										$selected = ($kategori['id_kategori'] == $berita['id_kategori']) ? 'selected' : '';
-										?>
-											<option value="<?= $kategori['id_kategori'] ?>"<?= $selected ?>><?= $kategori['nama_kategori'] ?></option>
-										<?php
-									}
-								?>
-							</select>
-						</div>
+											<div class="form-group">
+												<label for="id_kategori">Nama Kategori</label>
+												<select name="id_kategori" id="id_kategori" class="form-control">
+													<option value="" disabled selected>- Pilih Kategori -</option>
+													<?php
+														foreach($kategori->result_array() as $kategori){
+															$selected = ($kategori['id_kategori'] == $berita['id_kategori']) ? 'selected' : '';
+															?>
+																<option value="<?= $kategori['id_kategori'] ?>"<?= $selected ?>><?= $kategori['nama_kategori'] ?></option>
+															<?php
+														}
+													?>
+												</select>
+											</div>
 
-					  	<div class="form-group">
-							<label for="isi_berita">Isi Berita</label>
-							<textarea name="isi_berita" id="isi_berita" cols="30" rows="10" class="form-control"><?= $berita['isi_berita'] ?></textarea>
-						</div>
+											<div class="form-group">
+												<label for="isi_berita">Isi Berita</label>
+												<textarea name="isi_berita" id="isi_berita" cols="30" rows="10" class="form-control"><?= $berita['isi_berita'] ?></textarea>
+											</div>
 						
                       <button type="submit" class="btn btn-primary me-2"> Simpan </button>
                     </form>
-					<a href="<?= base_url('BeritaController') ?>"><button class="btn btn-secondary mt-2">Kembali</button></a>
+										<a href="<?= base_url('BeritaController') ?>"><button class="btn btn-secondary mt-2">Kembali</button></a>
                   </div>
                 </div>
               </div>
