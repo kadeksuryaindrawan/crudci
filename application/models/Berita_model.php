@@ -10,6 +10,13 @@ class Berita_model extends CI_Model
 		$result = $this->db->get('berita');
 		return $result;
 	}
+
+	public function getCount()
+	{
+		$result = $this->db->get('berita');
+		$row = $result->num_rows();
+		return $row;
+	}
 	
 	public function insertBerita()
 	{

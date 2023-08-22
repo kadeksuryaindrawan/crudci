@@ -8,7 +8,14 @@ class Kategori_model extends CI_Model
 		$this->db->order_by('id_kategori','desc');
 		$result = $this->db->get('kategori');
 		return $result;
-    }          
+    }
+	
+	public function getCount()
+	{
+		$result = $this->db->get('kategori');
+		$row = $result->num_rows();
+		return $row;
+	}
 	
 	public function insertKategori()
 	{

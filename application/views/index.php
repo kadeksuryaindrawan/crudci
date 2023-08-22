@@ -3,9 +3,27 @@
       <div class="container-fluid page-body-wrapper">
         <div class="main-panel">
           <div class="content-wrapper pb-0">
+						<div class="row">
+							<div class="col-lg-6 mb-3">
+								<div class="card bg-success text-white">
+									<div class="card-body">
+										<h4>Jumlah Kategori : <?= $kategori ?></h4>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 mb-3">
+								<div class="card bg-success text-white">
+									<div class="card-body">
+										<h4>Jumlah Berita : <?= $berita ?></h4>
+									</div>
+								</div>
+							</div>
+						</div>
 			<div class="card">
 				<div class="card-body text-center py-5">
 					<h3>Selamat Datang di Dashboard Kami, Admin</h3>
+						</div>
+					</div>
 				</div>
 			</div>
 		  </div>
